@@ -18,6 +18,8 @@ class ImageCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Photos"
+        
         flickrservice.searchPhotos(query: park!.fullName) { ( photos: [FlickrPhotoData]?, error: Error?) -> Void in
             
             DispatchQueue.main.async {

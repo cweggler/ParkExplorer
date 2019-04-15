@@ -20,6 +20,8 @@ class ParkListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "National Parks Explorer"
        
         statePicker = StatePicker(states: States.stateNames)
         statePickerView.dataSource = statePicker

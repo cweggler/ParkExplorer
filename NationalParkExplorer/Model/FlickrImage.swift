@@ -25,6 +25,7 @@ class FlickrImage {
     
     var fullURL: String? {
         guard let photo = photoData else { return nil }
-        return "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_h.jpg"
+        // Checked Flickr API documentation here- https://www.flickr.com/services/api/flickr.photos.getSizes.html and there is no _h but _b at the end is for large pics
+        return "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_b.jpg"
     }
 }

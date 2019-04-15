@@ -151,11 +151,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POQ-n3-a12">
                                 <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                             </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="026-DQ-elO">
+                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="S9X-oP-lJf" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" constant="5" id="BBR-3X-cEq"/>
+                            <constraint firstItem="026-DQ-elO" firstAttribute="centerX" secondItem="gRZ-hg-9xB" secondAttribute="centerX" id="CMG-my-aWY"/>
                             <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="POQ-n3-a12" secondAttribute="trailing" id="LNb-Hc-GmF"/>
+                            <constraint firstItem="026-DQ-elO" firstAttribute="centerY" secondItem="gRZ-hg-9xB" secondAttribute="centerY" id="Oww-jy-mB7"/>
                             <constraint firstItem="POQ-n3-a12" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" id="RY0-6i-gJU"/>
                             <constraint firstItem="POQ-n3-a12" firstAttribute="top" secondItem="S9X-oP-lJf" secondAttribute="bottom" constant="21.5" id="WUM-qX-PiM"/>
                             <constraint firstItem="S9X-oP-lJf" firstAttribute="top" secondItem="sPz-FR-7fe" secondAttribute="top" constant="5" id="jLV-q2-ozm"/>
@@ -165,6 +170,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sPz-FR-7fe"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="POQ-n3-a12" id="mqi-jt-TWW"/>
+                        <outlet property="loadingIndicator" destination="026-DQ-elO" id="FU2-d2-9SY"/>
+                        <outlet property="photoDetails" destination="S9X-oP-lJf" id="n7l-N5-iNa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hea-gK-GHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
