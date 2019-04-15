@@ -77,4 +77,13 @@ class ImageCollectionViewController: UICollectionViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "photoDetail" {
+            let selectedIndex = collectionView.indexPathsForSelectedItems?.first?.row
+            let selectedImage = photoSet!.images[selectedIndex!]
+            let destination = segue.destination as! ImageDetailViewController
+            destination.flickrImage = selectedImage
+        }
+    }
 }

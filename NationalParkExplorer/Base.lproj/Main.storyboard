@@ -120,6 +120,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="image" destination="2Td-0D-oGH" id="eRy-zW-ZdS"/>
+                                    <segue destination="ReQ-dM-kyd" kind="show" identifier="photoDetail" id="4As-cS-xzI"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -133,20 +134,41 @@
             </objects>
             <point key="canvasLocation" x="1791" y="24"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Detail View Controller-->
         <scene sceneID="jKc-bv-KP9">
             <objects>
-                <viewController id="ReQ-dM-kyd" sceneMemberID="viewController">
+                <viewController id="ReQ-dM-kyd" customClass="ImageDetailViewController" customModule="NationalParkExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gRZ-hg-9xB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9X-oP-lJf">
+                                <rect key="frame" x="5" y="69" width="365" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POQ-n3-a12">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="S9X-oP-lJf" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" constant="5" id="BBR-3X-cEq"/>
+                            <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="POQ-n3-a12" secondAttribute="trailing" id="LNb-Hc-GmF"/>
+                            <constraint firstItem="POQ-n3-a12" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" id="RY0-6i-gJU"/>
+                            <constraint firstItem="POQ-n3-a12" firstAttribute="top" secondItem="S9X-oP-lJf" secondAttribute="bottom" constant="21.5" id="WUM-qX-PiM"/>
+                            <constraint firstItem="S9X-oP-lJf" firstAttribute="top" secondItem="sPz-FR-7fe" secondAttribute="top" constant="5" id="jLV-q2-ozm"/>
+                            <constraint firstItem="S9X-oP-lJf" firstAttribute="centerX" secondItem="gRZ-hg-9xB" secondAttribute="centerX" id="m14-3T-8oO"/>
+                            <constraint firstItem="sPz-FR-7fe" firstAttribute="bottom" secondItem="POQ-n3-a12" secondAttribute="bottom" id="n1i-XC-FRD"/>
+                            <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="S9X-oP-lJf" secondAttribute="trailing" constant="5" id="z2W-ek-6g5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sPz-FR-7fe"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hea-gK-GHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2588" y="24"/>
+            <point key="canvasLocation" x="2588" y="23.838080959520241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6wg-JH-2Tx">

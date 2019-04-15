@@ -6,4 +6,14 @@
 //  Copyright © 2019 Cara. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ImageDetailViewController: UIViewController {
+    
+    var flickrImage: FlickrImage?
+    var flickrService: FlickrService()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
