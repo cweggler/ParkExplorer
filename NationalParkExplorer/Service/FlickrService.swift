@@ -46,7 +46,7 @@ class FlickrService {
         task.resume()
     }
     
-    func findUser(userID: String, completion: @escaping ([FlickrPhotoData]?, Error?) -> Void) {
+    func findUser(userID: String, completion: @escaping ([FlickrUserData]?, Error?) -> Void) {
         let url = buildUsernameURL(userID: userID)
         let session = URLSession.shared
         let task = session.dataTask(with: url!) { data, response, error in
@@ -54,14 +54,19 @@ class FlickrService {
             if let userResult = data {
                 do {
                     let decoder = JSONDecoder()
-                    let userResult = try decoder.decode(FlickrPhotoData.self, from: userResult)
-//                    completion(userResult.owner, nil)
+                    let userResult = try decoder.decode(FlickrGetInfoResponse.self, from: userResult)
+                    completion(userResult.userInfo, nil)
                 } catch {
                     print (error)
-                    
+                    completion(nil, FlickrServiceError.CouldNotParseResponse)
                 }
             }
+            else{
+                print(error)
+                completion(nil, FlickrServiceError.RequestFailed)
+            }
         }
+        task.resume()
     }
     
     func buildSearchURL(query: String) -> URL? {
