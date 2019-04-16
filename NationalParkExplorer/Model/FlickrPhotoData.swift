@@ -26,3 +26,14 @@ struct FlickrPhotoData: Decodable {
     let title: String
     let ispublic: Int
 }
+
+//struct FlickrGetInfoResponse: Decodable {
+//    let userInfo: [FlickrUserData]
+//}
+//
+//struct FlickrUserData: Decodable {
+//    let id: String
+//    let username: 
+//    
+//    
+//}

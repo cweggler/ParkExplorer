@@ -16,6 +16,9 @@ class ImageDetailViewController: UIViewController {
     @IBOutlet var photoDetails: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var usernameDetails: UITextView!
+    
+    // TODO: Add a textview that shows the username and link to profile page of person who created the photo
     
     
     override func viewDidLoad() {

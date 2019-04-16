@@ -46,6 +46,24 @@ class FlickrService {
         task.resume()
     }
     
+    func findUser(userID: String, completion: @escaping ([FlickrPhotoData]?, Error?) -> Void) {
+        let url = buildUsernameURL(userID: userID)
+        let session = URLSession.shared
+        let task = session.dataTask(with: url!) { data, response, error in
+            
+            if let userResult = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let userResult = try decoder.decode(FlickrPhotoData.self, from: userResult)
+//                    completion(userResult.owner, nil)
+                } catch {
+                    print (error)
+                    
+                }
+            }
+        }
+    }
+    
     func buildSearchURL(query: String) -> URL? {
         let components: URLComponents = {
             var components = URLComponents()
@@ -60,6 +78,24 @@ class FlickrService {
                 URLQueryItem(name: "per_page", value: "40"),
                 URLQueryItem(name: "format", value: "json"),
                 URLQueryItem(name: "nojsoncallback", value: "1"),
+            ]
+            return components
+        }()
+        
+        let url = components.url
+        return url
+    }
+    
+    func buildUsernameURL(userID: String) -> URL? {
+        let components: URLComponents = {
+            var components = URLComponents()
+            components.scheme = "https"
+            components.host = "api.flickr.com"
+            components.path = "/services/rest"
+            components.queryItems = [
+                URLQueryItem(name: "method", value: "flickr.people.getInfo"),
+                URLQueryItem(name: "api_key", value: apiKey),
+                URLQueryItem(name: "user_id", value: userID)
             ]
             return components
         }()

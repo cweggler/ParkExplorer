@@ -149,23 +149,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="POQ-n3-a12">
-                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="89" width="375" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="pry-Ch-xcM"/>
+                                </constraints>
                             </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="026-DQ-elO">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrE-3l-d7m">
+                                <rect key="frame" x="0.0" y="589" width="375" height="78"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="b7o-cE-yY0"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ZrE-3l-d7m" firstAttribute="bottom" secondItem="sPz-FR-7fe" secondAttribute="bottom" id="8I4-dP-YCw"/>
                             <constraint firstItem="S9X-oP-lJf" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" constant="5" id="BBR-3X-cEq"/>
                             <constraint firstItem="026-DQ-elO" firstAttribute="centerX" secondItem="gRZ-hg-9xB" secondAttribute="centerX" id="CMG-my-aWY"/>
-                            <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="POQ-n3-a12" secondAttribute="trailing" id="LNb-Hc-GmF"/>
+                            <constraint firstItem="POQ-n3-a12" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" id="Ew8-BD-AFp"/>
+                            <constraint firstItem="sPz-FR-7fe" firstAttribute="bottom" secondItem="POQ-n3-a12" secondAttribute="bottom" constant="78" id="FFD-e8-rQw"/>
+                            <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="ZrE-3l-d7m" secondAttribute="trailing" id="Fc4-PI-cBJ"/>
                             <constraint firstItem="026-DQ-elO" firstAttribute="centerY" secondItem="gRZ-hg-9xB" secondAttribute="centerY" id="Oww-jy-mB7"/>
-                            <constraint firstItem="POQ-n3-a12" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" id="RY0-6i-gJU"/>
-                            <constraint firstItem="POQ-n3-a12" firstAttribute="top" secondItem="S9X-oP-lJf" secondAttribute="bottom" constant="21.5" id="WUM-qX-PiM"/>
                             <constraint firstItem="S9X-oP-lJf" firstAttribute="top" secondItem="sPz-FR-7fe" secondAttribute="top" constant="5" id="jLV-q2-ozm"/>
                             <constraint firstItem="S9X-oP-lJf" firstAttribute="centerX" secondItem="gRZ-hg-9xB" secondAttribute="centerX" id="m14-3T-8oO"/>
-                            <constraint firstItem="sPz-FR-7fe" firstAttribute="bottom" secondItem="POQ-n3-a12" secondAttribute="bottom" id="n1i-XC-FRD"/>
+                            <constraint firstItem="POQ-n3-a12" firstAttribute="trailing" secondItem="sPz-FR-7fe" secondAttribute="trailing" id="sdY-Q0-cXH"/>
+                            <constraint firstItem="ZrE-3l-d7m" firstAttribute="leading" secondItem="sPz-FR-7fe" secondAttribute="leading" id="xtm-2m-Wuu"/>
                             <constraint firstItem="sPz-FR-7fe" firstAttribute="trailing" secondItem="S9X-oP-lJf" secondAttribute="trailing" constant="5" id="z2W-ek-6g5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sPz-FR-7fe"/>
@@ -174,6 +189,7 @@
                         <outlet property="imageView" destination="POQ-n3-a12" id="mqi-jt-TWW"/>
                         <outlet property="loadingIndicator" destination="026-DQ-elO" id="FU2-d2-9SY"/>
                         <outlet property="photoDetails" destination="S9X-oP-lJf" id="n7l-N5-iNa"/>
+                        <outlet property="usernameDetails" destination="ZrE-3l-d7m" id="ADW-6U-ac5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hea-gK-GHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
