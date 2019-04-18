@@ -27,17 +27,21 @@ struct FlickrPhotoData: Decodable {
     let ispublic: Int
 }
 
-struct FlickrGetInfoResponse: Decodable {
-    let userInfo: [FlickrUserData]
+struct FlickrUserData: Decodable {
+    let person: PersonData
 }
 
-struct FlickrUserData: Decodable {
+struct PersonData: Decodable {
     let id: String
-    let username_content: String
-    let realname_content: String
-    let location_content: String
-    let description_content: String
-    let photosurl_content: String
-    let profileurl_content: String
-    let mobileurl_content: String
+    let username: Username
+    let profileurl: ProfileUrl
 }
+
+struct Username: Decodable {
+    let _content: String
+}
+
+struct ProfileUrl: Decodable {
+    let _content: String
+}
+
