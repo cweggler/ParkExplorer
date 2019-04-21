@@ -11,6 +11,7 @@ import UIKit
 class ImageDetailViewController: UIViewController {
     
     var flickrImage: FlickrImage?
+    var flickrUser: FlickrUser?
     var flickrService = FlickrService()
     
     @IBOutlet var photoDetails: UILabel!
@@ -32,6 +33,20 @@ class ImageDetailViewController: UIViewController {
         photoDetails.text = photoData!.title
         let url = flickrImage!.fullURL
         
+        flickrService.findUser(userID: photoData!.owner) { ( user: FlickrUserData?, error: Error?) -> Void in
+            
+            DispatchQueue.main.async {
+                
+                if let error = error {
+                    print(error)
+                    
+                    self.present(ErrorAlertController.alert(message: "Error getting user info"), animated: true)
+                } else {
+                    self.usernameDetails.text = "\(user!.username)\n \(user!.profileurl)"
+                }
+            }
+        }
+
         flickrService.downloadImage(url: url!) { (image: UIImage?, error: Error?) -> Void in
             
             DispatchQueue.main.async {

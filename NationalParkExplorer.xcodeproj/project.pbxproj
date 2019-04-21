@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4619269D226CC6B7009D48F9 /* FlickrUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619269C226CC6B7009D48F9 /* FlickrUserData.swift */; };
+		4619269F226CE5A8009D48F9 /* FlickrUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4619269E226CE5A8009D48F9 /* FlickrUser.swift */; };
 		463C8BC2225D4FD30017CD00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C8BC1225D4FD30017CD00 /* AppDelegate.swift */; };
 		463C8BC4225D4FD30017CD00 /* ParkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C8BC3225D4FD30017CD00 /* ParkListViewController.swift */; };
 		463C8BC7225D4FD30017CD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463C8BC5225D4FD30017CD00 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4619269C226CC6B7009D48F9 /* FlickrUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrUserData.swift; sourceTree = "<group>"; };
+		4619269E226CE5A8009D48F9 /* FlickrUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrUser.swift; sourceTree = "<group>"; };
 		463C8BBE225D4FD20017CD00 /* NationalParkExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationalParkExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		463C8BC1225D4FD30017CD00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		463C8BC3225D4FD30017CD00 /* ParkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				463C8BEF225D51A90017CD00 /* States.swift */,
 				463C8C03225D62B00017CD00 /* FlickrImage.swift */,
 				463C8C05225D62C30017CD00 /* FlickrPhotoData.swift */,
+				4619269C226CC6B7009D48F9 /* FlickrUserData.swift */,
+				4619269E226CE5A8009D48F9 /* FlickrUser.swift */,
 				463C8C07225D62EB0017CD00 /* FlickrPhotoSet.swift */,
 			);
 			path = Model;
@@ -330,10 +336,12 @@
 				463C8C0A225D632C0017CD00 /* PhotoCell.swift in Sources */,
 				463C8C04225D62B00017CD00 /* FlickrImage.swift in Sources */,
 				463C8C0C225D63460017CD00 /* FlickrService.swift in Sources */,
+				4619269D226CC6B7009D48F9 /* FlickrUserData.swift in Sources */,
 				463C8C08225D62EB0017CD00 /* FlickrPhotoSet.swift in Sources */,
 				463C8BF0225D51A90017CD00 /* States.swift in Sources */,
 				463C8BC4225D4FD30017CD00 /* ParkListViewController.swift in Sources */,
 				463C8C06225D62C30017CD00 /* FlickrPhotoData.swift in Sources */,
+				4619269F226CE5A8009D48F9 /* FlickrUser.swift in Sources */,
 				463C8BC2225D4FD30017CD00 /* AppDelegate.swift in Sources */,
 				463C8BFA225D5E330017CD00 /* ErrorAlertController.swift in Sources */,
 				463C8BF2225D51C80017CD00 /* StatePicker.swift in Sources */,
