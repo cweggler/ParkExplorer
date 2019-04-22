@@ -10,20 +10,21 @@ import Foundation
 import UIKit
 
 struct FlickrUserInfoResponse: Decodable {
-    let userInfo: FlickrUserResponse
-}
-
-struct FlickrUserResponse: Decodable {
-    let user: FlickrUserData
+    let person: FlickrUserData
 }
 
 struct FlickrUserData: Decodable {
     let id: String
     let username: Username
+    let realname: Realname
     let profileurl: ProfileUrl
 }
 
 struct Username: Decodable {
+    let _content: String
+}
+
+struct Realname: Decodable {
     let _content: String
 }
 

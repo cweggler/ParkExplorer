@@ -55,7 +55,8 @@ class FlickrService {
                 do {
                     let decoder = JSONDecoder()
                     let userResult = try decoder.decode(FlickrUserInfoResponse.self, from: userResult)
-                    completion(userResult.userInfo.user, nil)
+                    completion(userResult.person, nil)
+                    print(userResult)
                 } catch {
                     print (error)
                     completion(nil, FlickrServiceError.CouldNotParseResponse)
@@ -100,7 +101,9 @@ class FlickrService {
             components.queryItems = [
                 URLQueryItem(name: "method", value: "flickr.people.getInfo"),
                 URLQueryItem(name: "api_key", value: apiKey),
-                URLQueryItem(name: "user_id", value: userID)
+                URLQueryItem(name: "user_id", value: userID),
+                URLQueryItem(name: "format", value: "json"),
+                URLQueryItem(name: "nojsoncallback", value: "1")
             ]
             return components
         }()

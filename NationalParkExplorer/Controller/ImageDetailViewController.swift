@@ -42,7 +42,7 @@ class ImageDetailViewController: UIViewController {
                     
                     self.present(ErrorAlertController.alert(message: "Error getting user info"), animated: true)
                 } else {
-                    self.usernameDetails.text = "\(user!.username)\n \(user!.profileurl)"
+                    self.usernameDetails.text = "Username: \(user!.username._content)\n Name: \(user!.realname._content)\n Profile URL: \(user!.profileurl._content)"
                 }
             }
         }
